@@ -11,6 +11,8 @@ services:
        VIRTUAL_HOST: "xn--lhrv4px6k7rz.xn--v0qr21b.xn--kpry57d,xn--p8so3e.xn--v0qr21b.xn--kpry57d"
        LETSENCRYPT_HOST: "xn--lhrv4px6k7rz.xn--v0qr21b.xn--kpry57d,xn--p8so3e.xn--v0qr21b.xn--kpry57d"
        LETSENCRYPT_EMAIL: "ithuan@ithuan.tw"
+    extra_hosts:
+    - "autuan.ithuan.tw:192.168.33.20"
     restart: always
 
 networks:
