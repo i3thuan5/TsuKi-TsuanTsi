@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  nginx:
+    image: nginx
+    volumes:
+      - "./nginx.conf:/etc/nginx/conf.d/default.conf:ro"
+    networks:
+      - nginx-bridge
+    environment:
+       VIRTUAL_HOST: "xn--lhrv4px6k7rz.xn--v0qr21b.xn--kpry57d,xn--p8so3e.xn--v0qr21b.xn--kpry57d"
+       LETSENCRYPT_HOST: "xn--lhrv4px6k7rz.xn--v0qr21b.xn--kpry57d,xn--p8so3e.xn--v0qr21b.xn--kpry57d"
+       LETSENCRYPT_EMAIL: "ithuan@ithuan.tw"
+    restart: always
+
+networks:
+  nginx-bridge:
+    external: true
